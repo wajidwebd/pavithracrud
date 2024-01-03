@@ -1,0 +1,53 @@
+.delete{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 27px;
+    margin-left: 10px;
+    padding: 0px 10px;
+
+    
+
+}
+.save{
+    background-color: green;
+    color: white;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    height: 27px;
+    padding: 0px 10px;
+
+
+}
+.edit{
+    background-color:purple;
+    color: white;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    height: 27px;
+    padding: 0px 10px;
+
+}
+.submitbutton{
+    margin-top: 50px;
+}
+.text-center{
+    margin-top: 40px;
+}
+
+.formmain{
+    width: 380px;
+    height: 470px;
+    /* border: solid 1px white; */
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 30px;
+}
+
+.btn{
+    width: 200px;
+    height: 50px;
+}

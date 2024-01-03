@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRUD operation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./crudop.css">
+  </head>
+  <body style="color: white; background-color: #000435;">
+
+    <div class="container">
+        <div class="text-center">
+            <h1 >CRUD OPERATION</h1>
+
+        </div>
+        <div class="main row justify-content-center">
+            <!-- <form action="" class="row justify-content-center mb-4"> -->
+                <!-- <form class="row g-3 needs-validation" novalidate> -->
+                  <div class="formmain">
+                    <div class="col-md-12">
+                      <label for="validationCustom01" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="name" placeholder="Enter Your Name" required id="name">
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                      <label for="validationCustomUsername" class="form-label">Username</label>
+                      <div class="input-group has-validation">
+                        <!-- <span class="input-group-text" id="inputGroupPrepend">@</span> -->
+                        <input type="text" class="form-control" id="email" placeholder="Enter Your Username" aria-describedby="inputGroupPrepend" required >
+                        <div class="invalid-feedback">
+                          Please choose a username.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <label for="validationCustom03" class="form-label">City</label>
+                      <input type="text" class="form-control" id="city" placeholder="Enter Your City" required>
+                      <div class="invalid-feedback">
+                        Please provide a valid city.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom03" class="form-label">State</label>
+                        <input type="text" class="form-control" id="state" placeholder="Enter Your State" required>
+                        <div class="invalid-feedback">
+                          Please provide a valid state.
+                        </div>
+                      </div>
+                      <div class="d-grid gap-2 col-7 mx-auto submitbutton"  >
+                        <button class="btn btn-primary" type="submit" id="button">Submit</button>
+                      </div>
+                  </div>
+                      
+                    
+                    
+                    <!-- <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div> -->
+                    
+                  <!-- </form> -->
+
+            <!-- </form> -->
+            <div class="text-center" class="formdiv" id="formdiv">
+                <h1 >DATA FROM FORM</h1>
+    
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+        let name=document.getElementById("name");
+        let email=document.getElementById("email");
+        let city=document.getElementById("city");
+        let state=document.getElementById("state");
+        let button=document.getElementById("button");
+        let formdiv=document.getElementById("formdiv");
+
+
+        
+
+
+        
+
+
+        button.addEventListener("click",function crudprogram(){
+                let newdivision=document.createElement("div");
+                formdiv.appendChild(newdivision)
+
+                let namenewinputtag=document.createElement("input");
+                console.log(name.value);
+                namenewinputtag.value=name.value;
+                namenewinputtag.setAttribute("readonly","readonly")
+                newdivision.appendChild(namenewinputtag);
+
+              
+                
+                let emailnewinputtag=document.createElement("input");
+                console.log(email.value);
+                emailnewinputtag.value=email.value;
+                emailnewinputtag.setAttribute("readonly","readonly")
+                newdivision.appendChild(emailnewinputtag);
+
+                let citynewinputtag=document.createElement("input");
+                console.log(city.value);
+                citynewinputtag.value=city.value;
+                citynewinputtag.setAttribute("readonly","readonly")
+                newdivision.appendChild(citynewinputtag);
+
+                let statenewinputtag=document.createElement("input");
+                console.log(state.value);
+                statenewinputtag.value=state.value;
+                statenewinputtag.setAttribute("readonly","readonly")
+                newdivision.appendChild(statenewinputtag);
+
+                let deletebutton = document.createElement('button');
+                deletebutton.innerHTML = "Delete";
+                deletebutton.classList.add('delete')
+                newdivision.appendChild(deletebutton);
+
+                deletebutton.addEventListener('click',()=>{
+                  newdivision.style.display="none"
+
+                })
+
+
+                let editbutton = document.createElement('button');
+                editbutton.innerHTML = "Edit";
+                editbutton.classList.add('edit')
+                newdivision.appendChild(editbutton);
+
+                editbutton.addEventListener('click',()=>{
+                  namenewinputtag.removeAttribute("readonly","readonly");
+                  emailnewinputtag.removeAttribute("readonly","readonly");
+                  citynewinputtag.removeAttribute("readonly","readonly");
+                  statenewinputtag.removeAttribute("readonly","readonly");
+                })
+                let savebutton = document.createElement('button');
+                savebutton.innerHTML = "Save";
+                savebutton.classList.add('save')
+                newdivision.appendChild(savebutton);
+
+                savebutton.addEventListener('click',()=>{
+                  namenewinputtag.setAttribute("readonly","readonly");
+                  emailnewinputtag.setAttribute("readonly","readonly");
+                  citynewinputtag.setAttribute("readonly","readonly");
+                  statenewinputtag.setAttribute("readonly","readonly");
+
+
+                })
+
+             
+
+
+
+
+
+                
+
+
+
+            
+        
+        
+        })
+               
+
+
+    </script>
+  </body>
+
+</html>
